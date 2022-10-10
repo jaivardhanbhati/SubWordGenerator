@@ -13,6 +13,7 @@ public class ValidSubWordGenerator {
     static Set<String> dictionary = new HashSet<String>();
     static List<String> validWords = new ArrayList<String>();
     static String output = "";
+    static String pathToDictionary = "";
 
     public static boolean validateWord(String word) {
         
@@ -56,11 +57,13 @@ public class ValidSubWordGenerator {
         return f + b;
     }
 
-    public static void loadEnglishDictionary() {
+    public static void loadDictionary() {
         try {
+        
+        pathToDictionary = (pathToDictionary.isBlank()) ? "EnglishDictionary.txt" : pathToDictionary;
             // load data from file
         BufferedReader bf = new BufferedReader(
-            new FileReader("EnglishDictionary.txt") );
+            new FileReader(pathToDictionary));
        
         // read entire line as string
         String line = bf.readLine();
@@ -74,18 +77,19 @@ public class ValidSubWordGenerator {
         // closing bufferreader object
         bf.close();
         } catch (IOException e) {
-            // TODO: handle exception
+            System.out.println("Error reading dictionary "+ e.getMessage());
         }   
     }
 
 
-    public static void main(String args[]){
-    
-        loadEnglishDictionary();
+    public static void main(String args[]) {
 
+        System.out.println("Enter the path of the dictionary(*.txt). Each word in the Dictionary should be seprated by a line.\nPress enter to load the default dictionary ");
+        pathToDictionary = System.console().readLine();
         System.out.println("Enter the word without spaces which you'd like to find subwords from: ");
         String input = System.console().readLine();
         System.out.println("Calculating all the subwords within " + input);
+        loadDictionary();
         validateWord(input);
         System.out.println(validWords);
 

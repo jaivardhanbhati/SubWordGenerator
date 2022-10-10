@@ -9,5 +9,12 @@ Complexity for a string of N characters, it iterates over N-1 remaining characte
 Time Complexity - O(N*N)
 
 **Instructions to run**
-javac ValidSubWordGenerator
+
+javac ValidSubWordGenerator.java
 java ValidSubWordGenerator.java
+
+Enter the path of the dictionary. Each word your Dictionary should be seprated by a line.
+Press enter to load the default dictionary 
+> EnglishDictionary.txt
+Enter the word without spaces which you'd like to find subwords from: 
+> starting
