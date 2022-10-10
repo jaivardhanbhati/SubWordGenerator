@@ -57,8 +57,6 @@ public class ValidSubWordGenerator {
     }
 
     public static void loadEnglishDictionary() {
-        
-
         try {
             // load data from file
         BufferedReader bf = new BufferedReader(
