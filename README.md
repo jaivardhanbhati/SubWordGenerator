@@ -8,6 +8,8 @@ Complexity for a string of N characters, it iterates over N-1 remaining characte
 
 Time Complexity - O(N*N)
 
+Alternate Algo can be - Build a suffix tree from the word and then traverse each subtree for a valid dictionary word. 
+
 **Instructions to run**
 
 javac ValidSubWordGenerator.java
